@@ -7,12 +7,12 @@ import json
 import pickle
 import matplotlib.pyplot as plt
 import numpy as np
-from planning_python.data_structures import PlanningProblem
-from planning_python.planners import ValueIteration
-from planning_python.cost_functions import UnitCost
-from planning_python.heuristic_functions import EuclideanHeuristicNoAng
-from planning_python.state_lattices import XYAnalyticLattice
-from planning_python.environment_interface import Env2D
+from planning_python.data_structures.planning_problem import PlanningProblem
+from planning_python.planners.value_iteration import ValueIteration
+from planning_python.cost_functions.cost_function import UnitCost
+from planning_python.heuristic_functions.heuristic_function import EuclideanHeuristicNoAng
+from planning_python.state_lattices.common_lattice.xy_analytic_lattice import XYAnalyticLattice
+from planning_python.environment_interface.env_2d import Env2D
 
 
 #Set some environment parameters
@@ -44,7 +44,7 @@ prob = PlanningProblem(prob_params)
 
 def get_json_dict(d):
   new_d = dict()
-  for key, v in d.iteritems():
+  for key, v in d.items():
     n_k = str(key)
     new_d[n_k] = v
   return new_d
